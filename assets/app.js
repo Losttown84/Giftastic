@@ -21,11 +21,16 @@ function displayGif(){
 for (var i = 0; i < response.data.length; i++){
         var rating = response.data[i].rating;
         var urlImage = response.data[i].images.url;
+        var stillImage = response.data[i].images.url;
         
         var image = $("<img>");
         var Rating = $("<p id='rating'>" + "Rating: " + rating +"</p>");
 
-        image.attr
+        image.attr("src", stillImage);
+        image.attr("alt", 'gif');
+        image.attr("data-state", "still");
+        image.attr("data-still", stillImage);
+        image.attr("data-animate", urlImage);
 }
 
 }
