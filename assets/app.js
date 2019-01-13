@@ -13,9 +13,15 @@ function displayGif(){
 
     var gif = $(this).attr('data-name');
     var queryURL = "https://api.giphy.com/v1/gifs/search" + gif + "?api_key=Pu6cLOh06nWg3HRDUMoZXAj7Y9M275kV&limit=10&rating=pg13";
+    $.ajax({url: queryURL, method: 'GET'}).done(function(response){
+        $("#comediansView").empty();
+        console.log(response);
+    })
+
+
 }
 
-// var queryURL = "https://api.giphy.com/v1/gifs/search" + gif +  "&api_key=Pu6cLOh06nWg3HRDUMoZXAj7Y9M275kV&";
+// var queryURL = "https://api.giphy.com/v1/gifs/search" + gif +  "&api_key=Pu6cLOh06nWg3HRDUMoZXAj7Y9M275kV&"; 
 
 $.ajax({
   url: queryURL,
