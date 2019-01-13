@@ -12,10 +12,10 @@ var comedy = ["George Carlin", "Ali Wong", "Aziz Ansari", "Tina Fey", "Titus Bur
 function displayGif(){
 
     var gif = $(this).attr('data-name');
-    var queryURL = "https://api.giphy.com/v1/gifs/trending?api_key=dc6zaTOxFJmzC";
+    var queryURL = "https://api.giphy.com/v1/gifs/search" + gif + "?api_key=Pu6cLOh06nWg3HRDUMoZXAj7Y9M275kV&limit=10&rating=pg13";
 }
 
-var queryURL = "https://api.giphy.com/v1/gifs/search" + gif +  "&api_key=Pu6cLOh06nWg3HRDUMoZXAj7Y9M275kV";
+// var queryURL = "https://api.giphy.com/v1/gifs/search" + gif +  "&api_key=Pu6cLOh06nWg3HRDUMoZXAj7Y9M275kV&";
 
 $.ajax({
   url: queryURL,
