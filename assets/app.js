@@ -9,7 +9,7 @@
 
 var comedy = ["George Carlin", "Ali Wong", "Aziz Ansari", "Tina Fey", "Titus Burgess"];
 
-function displayGif(){
+function gifDisplay(){
 
         var gif = $(this).attr('data-name');
         var queryURL = "https://api.giphy.com/v1/gifs/search" + gif + "?api_key=Pu6cLOh06nWg3HRDUMoZXAj7Y9M275kV&limit=10&rating=pg13";
@@ -24,15 +24,26 @@ for (var i = 0; i < response.data.length; i++){
         var stillImage = response.data[i].images.url;
         
         var image = $("<img>");
-        var Rating = $("<p id='rating'>" + "Rating: " + rating +"</p>");
+        var rating = $("<p id='rating'>" + "Rating: " + rating +"</p>");
 
         image.attr("src", stillImage);
         image.attr("alt", 'gif');
         image.attr("data-state", "still");
         image.attr("data-still", stillImage);
         image.attr("data-animate", urlImage);
+
+        $("#comediansView").prepend(image, ratingText);
+        checkState ();
 }
 
 }
 
+
+if(state === "still"){
+        $(this).attr('src', $(this).attr("data-animate"));
+        $(this).attr('data-state', "animate");
+        }else{
+          $(this).attr('src', $(this).attr("data-still"));
+          $(this).attr("data-state", "still");
+        }
 // var queryURL = "https://api.giphy.com/v1/gifs/search" + gif +  "&api_key=Pu6cLOh06nWg3HRDUMoZXAj7Y9M275kV&"; 
