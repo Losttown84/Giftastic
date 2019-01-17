@@ -13,8 +13,9 @@ function gifDisplay(){
 
         var gif = $(this).attr('data-name');
         var queryURL = "https://api.giphy.com/v1/gifs/search" + gif + "?api_key=Pu6cLOh06nWg3HRDUMoZXAj7Y9M275kV&limit=10&rating=pg13";
+
         $.ajax({url: queryURL, method: 'GET'}).done(function(response){
-            console.log(response);
+        //     console.log(response);
             $("#comediansView").empty();
     })
 
@@ -35,9 +36,20 @@ for (var i = 0; i < response.data.length; i++){
         $("#comediansView").prepend(image, ratingText);
         checkState ();
 }
+};
 
+function showButtons(){
+        $("#createButtons").empty();
+        
+        for (var i = 0; i<comedy.length; i++){
+                var newButton = $("<button class=btn btn-dark>")
+                newButton.addClass("comedian");
+                newButton.attr("date-name", comedy[i]);
+                newButton.text(comedy[i]);
+                $("#creatButtons").append(newButton);
+        }
 }
-
+$
 
 if(state === "still"){
         $(this).attr('src', $(this).attr("data-animate"));
