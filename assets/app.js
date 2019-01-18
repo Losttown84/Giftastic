@@ -56,6 +56,9 @@ $("addComedian").on("click", function(){
         return false;
 })
 
+$(document).on("click", "comedian", gifDisplay);
+
+createButtons();
 
 
 function checkState(){
@@ -69,5 +72,5 @@ function checkState(){
         }else{
           $(this).attr('src', $(this).attr("data-still"));
           $(this).attr("data-state", "still");
-        }
+        };
 // var queryURL = "https://api.giphy.com/v1/gifs/search" + gif +  "&api_key=Pu6cLOh06nWg3HRDUMoZXAj7Y9M275kV&"; 

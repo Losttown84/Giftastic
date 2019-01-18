@@ -12,11 +12,38 @@
         <link rel="stylesheet" type="text/css" href="assets/style.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <script src="assets/app.js"></script>
 </head>
 
 <body>
-
+	<div class="container">
+        <div class="jumbotron" id="jumbo">
+          <h1 id="text">Comedians</h1>
+              <p id="text">Click a button below to generate comedian gifs or add your own funny person</p>
+                  <div id="buttonsView"></div>
+                      <form class="form-horizontal">
+                        <fieldset>
+                          <div class="form-group">
+                            <div class="col-lg-10">
+                              <input type="text" class="form-control" id="animal-input" placeholder="Add an animal">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="col-lg-10">
+                              <button type="submit" class="btn btn-danger" id="addAnimal">Add it!</button>
+                            </div>
+                          </div>
+                        </fieldset>
+                      </form>
+      </div>
+      <div class="panel panel-default" id="panelBody">
+          <div class="panel-body">
+              <div id="comediansView">
+              </div>
+          </div>
+      </div>
+      
+  </div>
+  <script type="text/javascript" src="assets/app.js"></script>
 
 
 
