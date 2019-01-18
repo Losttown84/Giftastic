@@ -46,10 +46,17 @@ function showButtons(){
                 newButton.addClass("comedian");
                 newButton.attr("date-name", comedy[i]);
                 newButton.text(comedy[i]);
-                $("#creatButtons").append(newButton);
+                $("#createButtons").append(newButton);
         }
 }
-$
+$("addComedian").on("click", function(){
+        var comedian = $("comedian-input").val().trim();
+        comedy.push(comedy);
+        createButtons();
+        return false;
+})
+
+
 
 function checkState(){
                 $("img").on("click", function(){
